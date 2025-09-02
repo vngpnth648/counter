@@ -1,10 +1,10 @@
 module ctr123(
-input clk,
+input clock,
 input rst_n,
 input en,
 output logic [3:0] ctr);
 
-always_ff @(posedge clk or negedge rst_n)
+always_ff @(posedge clock or negedge rst_n)
 if(~rst_n) ctr <= 4'h0;
 else ctr <= en ? ctr + 4'h1 : ctr;
 
